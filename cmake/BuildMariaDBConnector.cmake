@@ -7,7 +7,7 @@
 
 include(ExternalProject)
 
-set(MARIADB_CONNECTOR_C_REPO "https://github.com/MariaDB/mariadb-connector-c.git"
+set(MARIADB_CONNECTOR_C_REPO "https://github.com/mysql-inception/mariadb-connector-c.git"
   CACHE STRING "MariaDB Connector-C Git repository")
 
 # Release 2.2.3 of the Connector-C
@@ -22,6 +22,7 @@ ExternalProject_Add(connector-c
   INSTALL_DIR ${CMAKE_BINARY_DIR}/connector-c/install
   UPDATE_COMMAND "")
 
+set(CMAKE_PREFIX_PATH "/usr/local/ssl" ${CMAKE_PREFIX_PATH})
 set(MARIADB_CONNECTOR_FOUND TRUE CACHE INTERNAL "")
 set(MARIADB_CONNECTOR_STATIC_FOUND TRUE CACHE INTERNAL "")
 set(MARIADB_CONNECTOR_INCLUDE_DIR

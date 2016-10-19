@@ -31,6 +31,8 @@ include(cmake/CheckPlatform.cmake)
 
 check_deps()
 check_dirs()
+set(CMAKE_PREFIX_PATH "/usr/local/ssl" "/usr/local/lib" ${CMAKE_PREFIX_PATH})
+
 find_package(OpenSSL)
 find_package(Valgrind)
 find_package(MariaDBConnector)
